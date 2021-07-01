@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F5185"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="The Secret Garden"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/bm_euljiro_10_years_later"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pw_layout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pw_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="#CDCDCD"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/open_bt"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:background="#A3A3A3"
+            app:layout_constraintTop_toTopOf="@id/first_pw"
+            app:layout_constraintBottom_toBottomOf="@id/first_pw"
+            app:layout_constraintEnd_toStartOf="@id/first_pw"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pw_change_bt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/open_bt"
+            app:layout_constraintStart_toStartOf="@id/open_bt"
+            app:layout_constraintEnd_toEndOf="@id/open_bt"/>
+
+        <NumberPicker
+            android:id="@+id/first_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/second_pw"/>
+
+        <NumberPicker
+            android:id="@+id/second_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/first_pw"
+            app:layout_constraintBottom_toBottomOf="@id/first_pw"
+            app:layout_constraintStart_toEndOf="@id/first_pw"
+            app:layout_constraintEnd_toStartOf="@id/third_pw"/>
+
+        <NumberPicker
+            android:id="@+id/third_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/first_pw"
+            app:layout_constraintBottom_toBottomOf="@id/first_pw"
+            app:layout_constraintStart_toEndOf="@id/second_pw"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
